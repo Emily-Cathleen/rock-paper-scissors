@@ -6,16 +6,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
-<body>
-  <aside class="human">
-  </aside>
-  <section class="choose-game">
+<body class="main-page">
+  <section class="sidebar-left">
+  <img class="sidebar-element" src="./assets/woman.png" alt="human icon">
+  <h3 class="sidebar-element">Player1</h3>
+  <p class="bidebar-element">Wins: 0</p>
   </section>
-  <aside class="computer">
-  </aside>
-
-
-
+  <section class="center">
+    <main>
+      <h1 class="center-title"> Rock, Paper, Scissors</h1>
+      <section class="game-wrapper">
+        <p class="center-choose">Choose your game!</p>
+        <button class="classic-game">
+          <h3>CLASSIC</h3>
+          <p>rock > paper</p><br>
+          <p>paper > scissors</p><br>
+          <p>scissors > paper</p><br>
+        </button>
+        <button class="difficult-game">
+          <h3>DIFFICULT</h3>
+          <p>rock > paper & mushroom</p><br>
+          <p>paper > scissors & tree</p><br>
+          <p>scissors > paper</p><br>
+        </button>
+    </section>
+  </section>
+  </main>
+  <section class="sidebar-right">
+    <img class="sidebar-element" src="./assets/desktop.png" alt="computer icon">
+    <h3 class="sidebar-element">Player2</h3>
+    <p class="bidebar-element">Wins: 0</p>
+  </section>
 </body>
   <script src="./src/player.js"></script>
   <script src="./src/game.js"></script>
