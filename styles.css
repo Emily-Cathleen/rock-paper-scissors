@@ -1,17 +1,82 @@
+
 * {
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
 
 body {
   display: flex;
   justify-content: center;
-  /* background: url(https://images.pexels.com/photos/626164/pexels-photo-626164.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) */
-  background: url(https://images.pexels.com/photos/7033650/pexels-photo-7033650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
-  /* background: url(https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) */
+  background: url(https://images.pexels.com/photos/5345029/pexels-photo-5345029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+
 }
 
-.human {
-  display: flex;
-  background-color: rgba(225, 225, 225, .9);
+html {
+  height: 100%;
+  width: 100%;
 
+}
+
+ .main-page {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.sidebar-element {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sidebar-left {
+  width: 18vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(137 101 50 / 75%);
+  text-align: center;
+}
+
+.sidebar-right {
+  width: 18vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgba(121 128 89 / 68%);
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 20vw;
+}
+
+.center-title,
+.center-choose {
+  /* background-color: rgba(225, 225, 225, .9); */
+  color: white;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 21px;
+}
+
+.classic-game {
+  height: 20vh;
+  width: 20vw;
+  margin-top: 42px;
+  background:rgb(212 213 182 / 51%);
+}
+
+.difficult-game {
+  height: 20vh;
+  width: 20vw;
+  margin-top: 38px;
+  background:rgb(212 213 182 / 51%);
 }
