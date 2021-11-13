@@ -1,46 +1,57 @@
 class Game {
-  constructor(type) {
+  constructor(human, computer, gameType) {
     this.human = human;
     this.computer = computer;
-    this.type = type;
-    this.winner = "";
+    this.gameType = gameType;
+    this.winner = '';
     this.draw = true;
     this.classicFighters = ['rock', 'paper', 'scissor'];
     this.difficultFighters = ['rock', 'paper', 'scissor', 'mushroom', 'bigfoot'];
   }
 
 evaluateClassicWinConditions() {
-  if (this.human.choice === "rock" && this.computer.choice === "paper") {
+  if (this.human.fighterChoice === "rock" && this.computer.fighterChoice === "paper") {
     this.winner = "computer";
     this.computer.wins += 1;
-  } else if (this.human.choice === "rock" && this.computer.choice === "scissor") {
+  } else if (this.human.fighterChoice === "rock" && this.computer.fighterChoice === "scissor") {
     this.winner = "human";
     this.human.wins += 1;
-  } else if (this.human.choice === )
-}
-
-evaluateDifficultWinConditions() {
-  if(this.human.choice === "rock" && ){
-
+  } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "paper") {
+    this.winner = "human";
+    this.human.wins += 1;
+  } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "rock") {
+    this.winner = "computer";
+    this.computer.wins += 1;
+  } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "rock") {
+    this.winner = "human";
+    this.human.wins += 1;
+  } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "scissor") {
   }
-}
+};
+};
 
-evaluateDraw(human, computer){
-  if (this.human.choice === this.computer.choice) {
-    this.draw = true;
-    } 
-  }
 
-  }
+// evaluateDifficultWinConditions() {
+//   if (this.human.gameChoice === "rock" && ){
+//   }
+// };
 
-checkWinCondition(){
-  if (this.type === classic) {
-    evaluateClassicWinConditions()
-  } else if( this.type === difficult) {
-    evaluateDifficultWinConditions()
-  }
-evaluateDraw()
-}
-}
-
-}
+// evaluateDraw(human, computer){
+//   if (this.human.gameChoice === this.computer.gameChoice) {
+//     this.draw = true;
+//     }
+//   }
+//
+//   }
+//
+// checkWinCondition(){
+//   if (this.gameType === classic) {
+//     evaluateClassicWinConditions()
+//   } else if( this.gameType === difficult) {
+//     evaluateDifficultWinConditions()
+//   }
+// evaluateDraw()
+// }
+// }
+//
+//

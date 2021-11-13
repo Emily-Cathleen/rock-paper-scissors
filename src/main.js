@@ -33,7 +33,6 @@ var bigfootFighter = document.querySelector('.bigfoot');
 var game;
 
 
-
 function addHidden(element) {
   element.classList.add('hidden');
 }
@@ -67,10 +66,14 @@ function returnToGameChoice() {
 }
 
 function playGame() {
-  game = new Game('classic');
-  human = new Player('human', )
+  human = new Player('human');
+  computer = new Player('computer');
+  game = new Game(human, computer, 'classic');
   var fighter = event.target.className
+  human.chooseFighter(fighter);
   console.log(fighter)
+  console.log(human)
+  // evaluateClassicWinConditions()
   //figure out how to target just the rock either as a class name or value
   // game.human.chooseFighter('fighter')
   //trigger the random computer fighter
@@ -78,6 +81,8 @@ function playGame() {
   //displaying the win or draw conditions - update score and banner
   //resetting the game
 }
+
+
 
 classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
