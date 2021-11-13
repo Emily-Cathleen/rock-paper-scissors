@@ -4,6 +4,7 @@ var centerChoose = document.querySelector('.center-choose');
 var gameChoiceView = document.querySelector('.game-choice-view');
 var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
 var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
+var changeGameButton = document.querySelector('.change-game');
 
 function addHidden(element) {
   element.classList.add('hidden');
@@ -28,6 +29,7 @@ function displayDifficultGame() {
 function hideMain() {
   centerChoose.innerHTML = `<p class="center-choose">Choose your fighter!</p>`
   addHidden(gameChoiceView);
+  removeHidden(changeGameButton);
 }
 
 
