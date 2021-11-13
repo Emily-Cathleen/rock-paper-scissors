@@ -61,7 +61,7 @@ html {
   color: white;
 }
 
-.game-wrapper {
+.game-choice-view {
   display: flex;
   flex-direction: column;
   margin-top: 21px;
@@ -79,4 +79,18 @@ html {
   width: 20vw;
   margin-top: 38px;
   background:rgb(212 213 182 / 51%);
+}
+
+.choose-fighter-classic {
+  height: 20px;
+  border: 2px solid blue;
+}
+
+.choose-fighter-difficult {
+  height: 20px;
+  border: 2px solid blue;
+}
+
+.hidden {
+  display: none;
 }
