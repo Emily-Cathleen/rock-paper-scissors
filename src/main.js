@@ -5,7 +5,17 @@ var gameChoiceView = document.querySelector('.game-choice-view');
 var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
 var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
 var changeGameButton = document.querySelector('.change-game');
+var selectFighter = document.querySelectorAll('.fighter-button');
 
+
+for (var i = 0; i < selectFighter.length; i++) {
+  selectFighter[i].addEventListener("click", startGame);
+}
+
+function getRandomIndex(array) {
+  var randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
 
 function addHidden(element) {
   element.classList.add('hidden');
@@ -18,7 +28,6 @@ function removeHidden(element) {
 function displayClassicGame() {
   hideMain();
   removeHidden(chooseFighterClassic);
-
 }
 
 function displayDifficultGame() {
