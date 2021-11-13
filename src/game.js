@@ -3,30 +3,44 @@ class Game {
     this.human = new Player('human');
     this.computer = new Player('computer');
     this.type = type;
-    this.classicFighters = ['rock', 'paper', 'scissors'];
-    this.difficultFighters = ['rock', 'paper', 'scissors', 'mushroom', 'bigfoot'];
+    this.winner = "";
+    this.classicFighters = ['rock', 'paper', 'scissor'];
+    this.difficultFighters = ['rock', 'paper', 'scissor', 'mushroom', 'bigfoot'];
   }
 
 evaluateClassicWinConditions() {
   if (this.human.choice === "rock" && this.computer.choice === "paper") {
-    }
+    this.winner = "computer";
+    this.computer.wins += 1;
+  } else if (this.human.choice === "rock" && this.computer.choice === "scissor") {
+    this.winner = "human";
+    this.human.wins += 1;
+  } else if (this.human.choice === )
 }
 
 evaluateDifficultWinConditions() {
-  if(){}
+  if(this.human.choice === "rock" && ){
+
+  }
 }
 
-evaluateDraw(){
-
-}
+evaluateDraw(human, computer){
+  if (this.human.choice === this.computer.choice) {
+    this.winner = "";
+    this.draw = true;
+  } else {
+    this.draw = false;
+  }
+  }
 
 checkWinCondition(){
-if (this.type === classic) {
+  if (this.type === classic) {
     evaluateClassicWinConditions()
-} else if( this.type === difficult) {
-  evaluateDifficultWinConditions()
+  } else if( this.type === difficult) {
+    evaluateDifficultWinConditions()
+  }
+evaluateDraw()
 }
-evaluateDraw();
 }
 
 }
