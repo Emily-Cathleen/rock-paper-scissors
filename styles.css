@@ -29,7 +29,7 @@ html {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgb(137 101 50 / 75%);
+  background-color: rgb(227 170 89 / 75%);
   text-align: center;
 }
 
@@ -38,7 +38,7 @@ html {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgba(121 128 89 / 68%);
+  background-color: rgba(165 175 123 / 68%);
   text-align: center;
 }
 
@@ -65,7 +65,7 @@ html {
   display: flex;
   text-align: center;
   flex-direction: column;
-  width: 48vw;
+  width: 58vw;
 }
 
 .center-title,
@@ -76,7 +76,7 @@ html {
 .center-title {
   margin-top: 10px;
   margin-bottom: 20px;
-  font-size: 44px;
+  font-size: 50px;
 }
 
 .center-choose {
@@ -91,20 +91,36 @@ html {
   align-items: center;
 }
 
+.difficulty-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.choice-style {
+  font-size: 23px;
+
+}
+
 .classic-game,
 .difficult-game {
-  height: 20vh;
-  width: 20vw;
+  height: 25vh;
+  width: 35vw;
   margin-top: 42px;
   background:rgb(212 213 182 / 51%);
   cursor: pointer;
-  border-radius: 8%
+  border-radius: 3%
+}
+
+.difficult-game {
+  height:40vh;
 }
 
 .classic-game:hover,
 .difficult-game:hover,
 .fighter-button:hover,
 .change-game:hover {
+  transform: scale(1.03);
   background-color: rgb(214 225 178 / 61%);
   cursor: pointer;
 }
@@ -126,7 +142,7 @@ html {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  background-color: rgb(121 128 89 / 0%);
+  background-color: rgb(121 128 89 / 28%);
 }
 
 .change-game {

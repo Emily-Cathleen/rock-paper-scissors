@@ -41,8 +41,6 @@ function returnToGameChoice() {
   addHidden(chooseFighterDifficult);
 }
 
-classicGame.addEventListener('click', displayClassicGame)
-difficultGame.addEventListener('click', displayDifficultGame)
-changeGameButton.addEventListener('click', returnToGameChoice)
-//create an EL that creates a variable choice that will lead to an event.target to get the Id of whatever was clicked.
-//
+classicGame.addEventListener('click', displayClassicGame);
+difficultGame.addEventListener('click', displayDifficultGame);
+changeGameButton.addEventListener('click', returnToGameChoice);
