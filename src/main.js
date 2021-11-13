@@ -7,6 +7,10 @@ var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult')
 var changeGameButton = document.querySelector('.change-game');
 // var selectFighter = document.querySelectorAll('.fighter-button');
 var rockFighter = document.querySelector('.rock');
+var paperFighter = document.querySelector('.paper');
+var scissorFighter = document.querySelector('.scissor');
+var mushroomFighter = document.querySelector('.mushroom');
+var bigfootFighter = document.querySelector('.bigfoot');
 
 
 //query select for each button - assign that fighter to a human player.
@@ -28,6 +32,8 @@ var rockFighter = document.querySelector('.rock');
 
 var game;
 
+
+
 function addHidden(element) {
   element.classList.add('hidden');
 }
@@ -37,7 +43,6 @@ function removeHidden(element) {
 }
 
 function displayClassicGame() {
-  // game = new Game('classic');
   hideMain();
   removeHidden(chooseFighterClassic);
 }
@@ -62,7 +67,8 @@ function returnToGameChoice() {
 }
 
 function playGame() {
-  //assign player1 the chosen rockFighter
+  game = new Game('classic');
+  human = new Player('human', )
   var fighter = event.target.className
   console.log(fighter)
   //figure out how to target just the rock either as a class name or value
@@ -77,3 +83,7 @@ classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 changeGameButton.addEventListener('click', returnToGameChoice);
 rockFighter.addEventListener('click', playGame)
+paperFighter.addEventListener('click', playGame)
+scissorFighter.addEventListener('click', playGame)
+mushroomFighter.addEventListener('click', playGame)
+bigfootFighter.addEventListener('click', playGame)

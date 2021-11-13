@@ -1,9 +1,10 @@
 class Game {
   constructor(type) {
-    this.human = new Player('human');
-    this.computer = new Player('computer');
+    this.human = human;
+    this.computer = computer;
     this.type = type;
     this.winner = "";
+    this.draw = true;
     this.classicFighters = ['rock', 'paper', 'scissor'];
     this.difficultFighters = ['rock', 'paper', 'scissor', 'mushroom', 'bigfoot'];
   }
@@ -26,11 +27,10 @@ evaluateDifficultWinConditions() {
 
 evaluateDraw(human, computer){
   if (this.human.choice === this.computer.choice) {
-    this.winner = "";
     this.draw = true;
-  } else {
-    this.draw = false;
+    } 
   }
+
   }
 
 checkWinCondition(){
