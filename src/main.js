@@ -6,6 +6,7 @@ var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
 var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
 var changeGameButton = document.querySelector('.change-game');
 
+
 function addHidden(element) {
   element.classList.add('hidden');
 }
@@ -43,3 +44,5 @@ function returnToGameChoice() {
 classicGame.addEventListener('click', displayClassicGame)
 difficultGame.addEventListener('click', displayDifficultGame)
 changeGameButton.addEventListener('click', returnToGameChoice)
+//create an EL that creates a variable choice that will lead to an event.target to get the Id of whatever was clicked.
+//
