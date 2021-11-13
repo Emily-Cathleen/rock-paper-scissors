@@ -32,7 +32,13 @@ function hideMain() {
   removeHidden(changeGameButton);
 }
 
-
+function returnToGameChoice() {
+  removeHidden(gameChoiceView);
+  addHidden(changeGameButton);
+  addHidden(chooseFighterClassic);
+  addHidden(chooseFighterDifficult);
+}
 
 classicGame.addEventListener('click', displayClassicGame)
 difficultGame.addEventListener('click', displayDifficultGame)
+changeGameButton.addEventListener('click', returnToGameChoice)
