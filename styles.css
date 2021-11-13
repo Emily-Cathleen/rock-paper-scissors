@@ -80,3 +80,7 @@ html {
   margin-top: 38px;
   background:rgb(212 213 182 / 51%);
 }
+
+.hidden {
+  display: none;
+}
