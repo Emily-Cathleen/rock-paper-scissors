@@ -27,12 +27,13 @@ function displayDifficultGame() {
 
 
 function hideMain() {
-  centerChoose.innerHTML = `<p class="center-choose">Choose your fighter!</p>`
+  centerChoose.innerText = "Choose your fighter!"
   addHidden(gameChoiceView);
   removeHidden(changeGameButton);
 }
 
 function returnToGameChoice() {
+  centerChoose.innerText = "Choose your game!"
   removeHidden(gameChoiceView);
   addHidden(changeGameButton);
   addHidden(chooseFighterClassic);

@@ -87,9 +87,10 @@ html {
 }
 
 .choose-fighter-difficult {
-  height: 20px;
-  border: 2px solid blue;
+
 }
+
+
 
 .hidden {
   display: none;
