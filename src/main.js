@@ -78,8 +78,7 @@ function playGame() {
   computer.chooseFighter(getRandomIndex(game.classicFighters));
   game.evaluateClassicWinConditions();
   displayResults();
-  resetGame();
-
+  setTimeout(resetGame, 3000);
 };
 
 function displayResults() {
@@ -103,7 +102,13 @@ function selectedFighter() {
 };
 
 function resetGame() {
-  // addHidden(resultsView);
+  addHidden(resultsView);
+  if (game.gameType === 'classic') {
+    displayClassicGame();
+  } else if (game.gameType === 'difficult') {
+    displayDifficultGame();
+  }
+
 };
 
 
