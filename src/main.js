@@ -78,30 +78,37 @@ function playGame() {
   computer.chooseFighter(getRandomIndex(game.classicFighters));
   game.evaluateClassicWinConditions();
   displayResults();
-  setTimeout(resetGame, 3000);
+  setTimeout(resetGame, 2000);
 };
 
 function displayResults() {
   addHidden(chooseFighterClassic);
   removeHidden(resultsView);
   selectedFighter();
-  humanWins.innerText = human.wins;
-  computerWins.innerText = computer.wins;
+  // humanWins.innerText = human.wins;
+  // computerWins.innerText = computer.wins;
   if (game.winner === 'human') {
+      var currentWins = JSON.parse(localStorage.getItem("human"))
+      currentWins += 1;
+      var stringifiedHumanWins = JSON.stringify(currentWins);
+      localStorage.setItem("human", stringifiedHumanWins);
        centerChoose.innerText = "Human won this round!"
   } else if (game.winner === 'computer') {
        centerChoose.innerText = "Computer won this round!"
   } else {
        centerChoose.innerText = "It's a draw!"
+       console.log("helooooo");
   }
 };
 
 function selectedFighter() {
   humanFighter.src = `./assets/${human.fighterChoice}.png`
+  console.log("test")
   computerFighter.src = `./assets/${computer.fighterChoice}.png`
 };
 
 function resetGame() {
+  console.log('emily')
   addHidden(resultsView);
   if (game.gameType === 'classic') {
     displayClassicGame();
@@ -111,17 +118,12 @@ function resetGame() {
 
 };
 
+//local storage
 
-  // if () {
-  //   centerChoose.innerText = "Computer won this round!"
-  // }
-  // if () {
-  //   centerChoose.innerText = "Human won this round!"
-  // }
+function saveWinsLocalStorage(){
 
-  //displaying the win or draw conditions
-  //update score and banner
-  //resetting the game
+  }
+}
 
 
 
