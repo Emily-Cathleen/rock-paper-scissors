@@ -23,39 +23,40 @@ var bigfootFighter = document.querySelector('.bigfoot');
 //   selectFighter[i].addEventListener("click", startGame);
 // }
 //
-// function getRandomIndex(array) {
-//   var randomIndex = Math.floor(Math.random() * array.length);
-//   return array[randomIndex];
-// }
+//
 
 //global variables
 
 var game;
 
+function getRandomIndex(array) {
+  var randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+};
 
 function addHidden(element) {
   element.classList.add('hidden');
-}
+};
 
 function removeHidden(element) {
   element.classList.remove('hidden');
-}
+};
 
 function displayClassicGame() {
   hideMain();
   removeHidden(chooseFighterClassic);
-}
+};
 
 function displayDifficultGame() {
   hideMain();
   removeHidden(chooseFighterDifficult);
-}
+};
 
 function hideMain() {
   centerChoose.innerText = "Choose your fighter!"
   addHidden(gameChoiceView);
   removeHidden(changeGameButton);
-}
+};
 
 function returnToGameChoice() {
   centerChoose.innerText = "Choose your game!"
@@ -63,24 +64,30 @@ function returnToGameChoice() {
   addHidden(changeGameButton);
   addHidden(chooseFighterClassic);
   addHidden(chooseFighterDifficult);
-}
+};
 
 function playGame() {
   human = new Player('human');
   computer = new Player('computer');
   game = new Game(human, computer, 'classic');
-  var fighter = event.target.className
+  var fighter = event.target.className;
   human.chooseFighter(fighter);
+  computer.chooseFighter(getRandomIndex(game.classicFighters));
+  game.evaluateClassicWinConditions();
   console.log(fighter)
   console.log(human)
-  // evaluateClassicWinConditions()
   //figure out how to target just the rock either as a class name or value
   // game.human.chooseFighter('fighter')
   //trigger the random computer fighter
   //evaluate for win conditions
   //displaying the win or draw conditions - update score and banner
   //resetting the game
-}
+};
+
+
+
+
+
 
 
 
@@ -92,3 +99,7 @@ paperFighter.addEventListener('click', playGame)
 scissorFighter.addEventListener('click', playGame)
 mushroomFighter.addEventListener('click', playGame)
 bigfootFighter.addEventListener('click', playGame)
+
+//refactor:
+//Id for event.targrt.id to select for fighter icon
+//-use id's to query select for HTML elements. classes should be used for class ClassName
