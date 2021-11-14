@@ -8,7 +8,6 @@ class Player {
 
   chooseFighter(fighter) {
     this.fighterChoice = fighter;
-  //pass in whicheverone it chose, then this.choice to whatever is passed in.
   }
 
 

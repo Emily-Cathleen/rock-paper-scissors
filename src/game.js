@@ -28,12 +28,30 @@ evaluateClassicWinConditions() {
   } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "scissor") {
   }
 };
-};
+
 
 
 // evaluateDifficultWinConditions() {
-//   if (this.human.gameChoice === "rock" && ){
-//   }
+//   if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "mushroom")) {
+//     this.winner = "human";
+//     this.human.wins += 1;
+// } else if (this.human.fighterChoice === "paper" && (this.computer.fighterChoice === "rock" || this.computer.fighterChoice === "bigfoot")) {
+//     this.winner = "human";
+//     this.human.wins += 1;
+// } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "paper") {
+//     this.winner = "human";
+//     this.human.wins += 1;
+// } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "rock") {
+//     this.winner = "computer";
+//     this.computer.wins += 1;
+// } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "rock") {
+//     this.winner = "human";
+//     this.human.wins += 1;
+// } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "scissor") {
+// }
+// };
+
+};
 // };
 
 // evaluateDraw(human, computer){

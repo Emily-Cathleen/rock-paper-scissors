@@ -6,11 +6,14 @@ var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
 var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
 var changeGameButton = document.querySelector('.change-game');
 // var selectFighter = document.querySelectorAll('.fighter-button');
-var rockFighter = document.querySelector('.rock');
-var paperFighter = document.querySelector('.paper');
-var scissorFighter = document.querySelector('.scissor');
-var mushroomFighter = document.querySelector('.mushroom');
-var bigfootFighter = document.querySelector('.bigfoot');
+var rockFighter = document.querySelector('[data-type="rock"]');
+var paperFighter = document.querySelector('[data-type="paper"]');
+var scissorFighter = document.querySelector('[data-type="scissor"]');
+var mushroomFighter = document.querySelector('[data-type="mushroom"]');
+var bigfootFighter = document.querySelector('[data-type="bigfoot"]');
+var resultsView = document.querySelector('.results-view');
+var humanFighter = document.querySelector('#humanFighter');
+var computerFighter = document.querySelector('#computerFighter');
 
 
 //query select for each button - assign that fighter to a human player.
@@ -22,11 +25,8 @@ var bigfootFighter = document.querySelector('.bigfoot');
 // for (var i = 0; i < selectFighter.length; i++) {
 //   selectFighter[i].addEventListener("click", startGame);
 // }
-//
-//
 
 //global variables
-
 var game;
 
 function getRandomIndex(array) {
@@ -70,22 +70,44 @@ function playGame() {
   human = new Player('human');
   computer = new Player('computer');
   game = new Game(human, computer, 'classic');
-  var fighter = event.target.className;
+  var fighter = event.target.dataset.type || event.target.parentNode.dataset.type;
   human.chooseFighter(fighter);
   computer.chooseFighter(getRandomIndex(game.classicFighters));
   game.evaluateClassicWinConditions();
-  console.log(fighter)
-  console.log(human)
-  //figure out how to target just the rock either as a class name or value
-  // game.human.chooseFighter('fighter')
-  //trigger the random computer fighter
-  //evaluate for win conditions
-  //displaying the win or draw conditions - update score and banner
-  //resetting the game
+  displayResults();
+
 };
 
+function displayResults() {
+  addHidden(chooseFighterClassic);
+  removeHidden(resultsView);
+  human.fighterChoice
+  computer.fighterChoice
+
+  if (game.winner === 'human') {
+       centerChoose.innerText = "Human won this round!"
+  } else if (game.winner === 'computer') {
+       centerChoose.innerText = "Computer won this round!"
+  } else {
+       centerChoose.innerText = "It's a draw!"
+  }
+};
+
+function selectedFighter() {
+
+}
 
 
+  // if () {
+  //   centerChoose.innerText = "Computer won this round!"
+  // }
+  // if () {
+  //   centerChoose.innerText = "Human won this round!"
+  // }
+
+  //displaying the win or draw conditions
+  //update score and banner
+  //resetting the game
 
 
 
