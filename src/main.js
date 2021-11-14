@@ -93,8 +93,12 @@ function displayResults() {
       humanWins.innerText = stringifiedHumanWins;
        centerChoose.innerText = "Human won this round!"
   } else if (game.winner === 'computer') {
-      
-       centerChoose.innerText = "Computer won this round!"
+      var currentWins = JSON.parse(localStorage.getItem("computer"))
+      currentWins += 1;
+      var stringifiedComputerWins = JSON.stringify(currentWins);
+      localStorage.setItem("computer", stringifiedComputerWins);
+      computerWins.innerText = stringifiedComputerWins;
+      centerChoose.innerText = "Computer won this round!"
   } else {
        centerChoose.innerText = "It's a draw!"
   }
