@@ -100,11 +100,11 @@ function displayResults() {
 function selectedFighter() {
   humanFighter.src = `./assets/${human.fighterChoice}.png`
   computerFighter.src = `./assets/${computer.fighterChoice}.png`
-}
+};
 
 function resetGame() {
   // addHidden(resultsView);
-}
+};
 
 
   // if () {

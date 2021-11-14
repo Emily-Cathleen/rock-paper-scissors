@@ -26,6 +26,8 @@ evaluateClassicWinConditions() {
     this.winner = "human";
     this.human.wins += 1;
   } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "scissor") {
+    this.winner = "computer";
+    this.computer.wins += 1;
   }
 };
 
@@ -52,15 +54,8 @@ evaluateClassicWinConditions() {
 // };
 
 };
-// };
 
-// evaluateDraw(human, computer){
-//   if (this.human.gameChoice === this.computer.gameChoice) {
-//     this.draw = true;
-//     }
-//   }
 //
-//   }
 //
 // checkWinCondition(){
 //   if (this.gameType === classic) {
