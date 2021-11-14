@@ -10,9 +10,7 @@ class Player {
     this.fighterChoice = fighter;
   }
 
+  
 
 
-  takeTurns(){
-
-  }
 }

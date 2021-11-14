@@ -14,6 +14,8 @@ var bigfootFighter = document.querySelector('[data-type="bigfoot"]');
 var resultsView = document.querySelector('.results-view');
 var humanFighter = document.querySelector('#humanFighter');
 var computerFighter = document.querySelector('#computerFighter');
+var humanWins = document.querySelector('.human-wins');
+var computerWins = document.querySelector('.computer-wins');
 
 
 //query select for each button - assign that fighter to a human player.
@@ -64,6 +66,7 @@ function returnToGameChoice() {
   addHidden(changeGameButton);
   addHidden(chooseFighterClassic);
   addHidden(chooseFighterDifficult);
+  addHidden(resultsView);
 };
 
 function playGame() {
@@ -75,6 +78,7 @@ function playGame() {
   computer.chooseFighter(getRandomIndex(game.classicFighters));
   game.evaluateClassicWinConditions();
   displayResults();
+  resetGame();
 
 };
 
@@ -82,6 +86,8 @@ function displayResults() {
   addHidden(chooseFighterClassic);
   removeHidden(resultsView);
   selectedFighter();
+  humanWins.innerText = human.wins;
+  computerWins.innerText = computer.wins;
   if (game.winner === 'human') {
        centerChoose.innerText = "Human won this round!"
   } else if (game.winner === 'computer') {
@@ -96,6 +102,9 @@ function selectedFighter() {
   computerFighter.src = `./assets/${computer.fighterChoice}.png`
 }
 
+function resetGame() {
+  // addHidden(resultsView);
+}
 
 
   // if () {
