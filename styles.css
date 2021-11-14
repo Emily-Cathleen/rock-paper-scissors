@@ -23,18 +23,13 @@ html {
   width: 100vw;
 }
 
-.sidebar-element {
-  margin-left: 15px;
-  margin-right: 15px;
-}
 
 .sidebar-left {
   width: 18vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  background-color: rgb(137 101 50 / 75%);
+  background-color: rgb(227 170 89 / 75%);
   text-align: center;
 }
 
@@ -43,42 +38,91 @@ html {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  background-color: rgba(121 128 89 / 68%);
+  background-color: rgba(165 175 123 / 68%);
   text-align: center;
+}
+
+.sidebar-icon {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.sidebar-element {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 35px;
+}
+
+.sidebar-wins {
+  margin-top: 10px;
+  font-size: 25px;
 }
 
 .center {
   display: flex;
   text-align: center;
   flex-direction: column;
-  width: 20vw;
+  width: 58vw;
 }
 
 .center-title,
 .center-choose {
-  /* background-color: rgba(225, 225, 225, .9); */
   color: white;
+}
+
+.center-title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+.center-choose {
+  margin-bottom: 40px;
+  font-size: 30px;
 }
 
 .game-choice-view {
   display: flex;
   flex-direction: column;
   margin-top: 21px;
+  align-items: center;
 }
 
-.classic-game {
-  height: 20vh;
-  width: 20vw;
+.difficulty-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.choice-style {
+  font-size: 23px;
+
+}
+
+.classic-game,
+.difficult-game {
+  height: 25vh;
+  width: 35vw;
   margin-top: 42px;
   background:rgb(212 213 182 / 51%);
+  cursor: pointer;
+  border-radius: 3%
 }
 
 .difficult-game {
-  height: 20vh;
-  width: 20vw;
-  margin-top: 38px;
-  background:rgb(212 213 182 / 51%);
+  height:40vh;
+}
+
+.classic-game:hover,
+.difficult-game:hover,
+.fighter-button:hover,
+.change-game:hover {
+  transform: scale(1.03);
+  background-color: rgb(214 225 178 / 61%);
+  cursor: pointer;
 }
 
 .choose-fighter-classic {
@@ -90,8 +134,30 @@ html {
 }
 
 .fighter-icon {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
+}
+
+.fighter-button {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: rgb(121 128 89 / 28%);
+}
+
+.change-game {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(148 165 110 / 91%);
+
+}
+
+.results-view {
+  
 }
 
 .hidden {

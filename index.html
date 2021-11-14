@@ -8,46 +8,57 @@
 </head>
 <body class="main-page">
   <section class="sidebar-left">
-  <img class="sidebar-element" src="./assets/woman.png" alt="human icon">
+  <img class="sidebar-icon" src="./assets/woman.png" alt="human icon">
   <h3 class="sidebar-element">Player1</h3>
-  <p class="sidebar-element">Wins: 0</p>
-  <button class="change-game hidden">CHANGE GAME?</button>
+  <p class="sidebar-wins">Wins: <span class="human-wins"></span></p>
+  <button class="change-game hidden">Change Game?</button>
   </section>
   <section class="center">
     <main>
-      <h1 class="center-title"> Rock, Paper, Scissors</h1>
+      <h1 class="center-title">Rock, Paper, Scissors</h1>
       <p class="center-choose">Choose your game!</p>
       <section class="game-choice-view">
         <button class="classic-game">
-          <h3>CLASSIC</h3>
-          <p>rock > paper</p><br>
-          <p>paper > scissors</p><br>
-          <p>scissors > paper</p><br>
+          <h3 class="difficulty-title">CLASSIC</h3>
+          <div class="choice-style">
+            <p>rock > paper</p><br>
+            <p>paper > scissors</p><br>
+            <p>scissors > paper</p><br>
+          </div>
         </button>
         <button class="difficult-game">
-          <h3>DIFFICULT</h3>
-          <p>rock > paper & mushroom</p><br>
-          <p>paper > scissors & tree</p><br>
-          <p>scissors > paper</p><br>
+          <h3 class="difficulty-title">DIFFICULT</h3>
+          <div class="choice-style">
+            <p>rock > scissors & mushroom</p><br>
+            <p>paper > rock & bigfoot</p><br>
+            <p>scissors > paper & mushroom</p><br>
+            <p>mushroom > paper & bigfoot</p><br>
+            <p>bigfoot > sciccors & rock</p>
+          </div>
         </button>
       </section>
       <section class="choose-fighter-classic hidden">
-        <button type="button"><img class="fighter-icon" src="./assets/rock.png" alt="rock icon"></button>
-        <button type="button"><img class="fighter-icon" src="./assets/essay.png" alt="paper icon"></button>
-        <button type="button"><img class="fighter-icon" src="./assets/scissors.png" alt="scissors icon"></button>
+        <button class ="fighter-button" data-type="rock" type="button"><img class="fighter-icon" src="./assets/rock.png" alt="rock icon"></button>
+        <button class ="fighter-button" data-type="paper" type="button"><img class="fighter-icon" src="./assets/paper.png" alt="paper icon"></button>
+        <button class ="fighter-button" data-type="scissor" type="button"><img class="fighter-icon" src="./assets/scissor.png" alt="scissors icon"></button>
       </section>
       <section class="choose-fighter-difficult hidden">
-        <button type="button"><img class="fighter-icon" src="./assets/rock.png" alt="rock icon"></button>
-        <button type="button"><img class="fighter-icon" src="./assets/essay.png" alt="paper icon"></button>
-        <button type="button"><img class="fighter-icon" src="./assets/scissors.png" alt="scissors icon"></button>
-        <button type="button"><img class="fighter-icon" src="./assets/mushrooms.png" alt="mushroom icon"></button>
+        <button class ="fighter-button" data-type="rock" type="button"><img class="fighter-icon" src="./assets/rock.png" alt="rock icon"></button>
+        <button class ="fighter-button" data-type="paper" type="button"><img class="fighter-icon" src="./assets/paper.png" alt="paper icon"></button>
+        <button class ="fighter-button" data-type="scissor" type="button"><img class="fighter-icon" src="./assets/scissor.png" alt="scissors icon"></button>
+        <button class ="fighter-button" data-type="mushroom" type="button"><img class="fighter-icon" src="./assets/mushroom.png" alt="mushroom icon"></button>
+        <button class ="fighter-button" data-type="bigfoot" type="button"><img class="fighter-icon" src="./assets/bigfoot.png" alt="bigfoot icon"></button>
+      </section>
+      <section class="results-view hidden">
+        <img class="fighter-icon" id="humanFighter" src="" alt="">
+        <img class="fighter-icon" id="computerFighter" src="" alt="">
       </section>
   </section>
   </main>
   <section class="sidebar-right">
-    <img class="sidebar-element" src="./assets/desktop.png" alt="computer icon">
+    <img class="sidebar-icon" src="./assets/desktop.png" alt="computer icon">
     <h3 class="sidebar-element">Player2</h3>
-    <p class="bidebar-element">Wins: 0</p>
+    <p class="sidebar-wins">Wins: <span class="computer-wins"></span></p>
   </section>
 </body>
   <script src="./src/player.js"></script>
