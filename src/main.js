@@ -81,9 +81,7 @@ function playGame() {
 function displayResults() {
   addHidden(chooseFighterClassic);
   removeHidden(resultsView);
-  human.fighterChoice
-  computer.fighterChoice
-
+  selectedFighter();
   if (game.winner === 'human') {
        centerChoose.innerText = "Human won this round!"
   } else if (game.winner === 'computer') {
@@ -94,7 +92,8 @@ function displayResults() {
 };
 
 function selectedFighter() {
-
+  humanFighter.src = `./assets/${human.fighterChoice}.png`
+  computerFighter.src = `./assets/${computer.fighterChoice}.png`
 }
 
 
