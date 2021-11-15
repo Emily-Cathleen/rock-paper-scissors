@@ -7,9 +7,20 @@ class Player {
   }
 
   chooseFighter(fighter) {
+    if (!fighter) {
+      this.fighterChoice = getRandomIndex(game.classicFighters);
+    }
     this.fighterChoice = fighter;
+  };
 
-  }
+  saveWinsToStorage() {
+
+  };
+
+  retrieveWinsFromStorage() {
+
+  };
+
 
 
 };

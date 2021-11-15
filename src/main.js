@@ -69,14 +69,18 @@ function returnToGameChoice() {
   addHidden(resultsView);
 };
 
-function playGame() {
+function playGame(event) {
   game = new Game();
   var fighter = event.target.dataset.type || event.target.parentNode.dataset.type;
-  game.human.chooseFighter(fighter);
-  game.computer.chooseFighter(getRandomIndex(game.classicFighters));
-  game.evaluateClassicWinConditions();
+  chooseBothFighters(fighter);
+  game.evaluateWinConditions();
   displayResults();
   setTimeout(resetGame, 2000);
+};
+
+function chooseBothFighters(fighter) {
+  game.human.chooseFighter(fighter);
+  game.computer.chooseFighter();
 };
 
 function displayResults() {
@@ -103,8 +107,8 @@ function displayResults() {
 };
 
 function selectedFighter() {
-  humanFighter.src = `./assets/${human.fighterChoice}.png`
-  computerFighter.src = `./assets/${computer.fighterChoice}.png`
+  humanFighter.src = `./assets/${game.human.fighterChoice}.png`
+  computerFighter.src = `./assets/${game.computer.fighterChoice}.png`
 };
 
 function resetGame() {
