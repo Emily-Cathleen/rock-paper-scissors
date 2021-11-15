@@ -1,7 +1,7 @@
 class Game {
   constructor(human, computer, gameType) {
-    this.human = human;
-    this.computer = computer;
+    this.human = new Player('human');
+    this.computer = new Player('computer');
     this.gameType = gameType;
     this.winner = '';
     this.draw = true;
@@ -9,28 +9,50 @@ class Game {
     this.difficultFighters = ['rock', 'paper', 'scissor', 'mushroom', 'bigfoot'];
   }
 
-evaluateClassicWinConditions() {
-  if (this.human.fighterChoice === "rock" && this.computer.fighterChoice === "paper") {
-    this.winner = "computer";
-    this.computer.wins += 1;
-  } else if (this.human.fighterChoice === "rock" && this.computer.fighterChoice === "scissor") {
-    this.winner = "human";
-    this.human.wins += 1;
-  } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "paper") {
-    this.winner = "human";
-    this.human.wins += 1;
-  } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "rock") {
-    this.winner = "computer";
-    this.computer.wins += 1;
-  } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "rock") {
-    this.winner = "human";
-    this.human.wins += 1;
-  } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "scissor") {
-    this.winner = "computer";
-    this.computer.wins += 1;
-  }
-};
+  evaluateWinConditions() {
+    if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "mushroom")) {
+      this.winner = "computer";
+      this.computer.wins += 1;
+    } else if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "bigfoot")) {
+      this.winner = "human";
+      this.human.wins += 1;
+    } else if (this.human.fighterChoice === "paper" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "bigfoot")) {
+      this.winner = "human";
+      this.human.wins += 1;
+    } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "rock") {
+      this.winner = "computer";
+      this.computer.wins += 1;
+    } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "rock") {
+      this.winner = "human";
+      this.human.wins += 1;
+    } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "scissor") {
+      this.winner = "computer";
+      this.computer.wins += 1;
+    }
+  };
 
+// evaluateClassicWinConditions() {
+//   if (this.human.fighterChoice === "rock" && this.computer.fighterChoice === "paper") {
+//     this.winner = "computer";
+//     this.computer.wins += 1;
+//   } else if (this.human.fighterChoice === "rock" && this.computer.fighterChoice === "scissor") {
+//     this.winner = "human";
+//     this.human.wins += 1;
+//   } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "paper") {
+//     this.winner = "human";
+//     this.human.wins += 1;
+//   } else if (this.human.fighterChoice === "scissor" && this.computer.fighterChoice === "rock") {
+//     this.winner = "computer";
+//     this.computer.wins += 1;
+//   } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "rock") {
+//     this.winner = "human";
+//     this.human.wins += 1;
+//   } else if (this.human.fighterChoice === "paper" && this.computer.fighterChoice === "scissor") {
+//     this.winner = "computer";
+//     this.computer.wins += 1;
+//   }
+// };
+//
 
 
 // evaluateDifficultWinConditions() {

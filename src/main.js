@@ -124,11 +124,12 @@ function resetGame() {
 classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 changeGameButton.addEventListener('click', returnToGameChoice);
-rockFighter.addEventListener('click', playGame)
-paperFighter.addEventListener('click', playGame)
-scissorFighter.addEventListener('click', playGame)
-mushroomFighter.addEventListener('click', playGame)
-bigfootFighter.addEventListener('click', playGame)
+rockFighter.addEventListener('click', playGame);
+paperFighter.addEventListener('click', playGame);
+scissorFighter.addEventListener('click', playGame);
+mushroomFighter.addEventListener('click', playGame);
+bigfootFighter.addEventListener('click', playGame);
+// window.addEventListener('load', displayResults());
 
 //refactor:
 //Id for event.targrt.id to select for fighter icon
