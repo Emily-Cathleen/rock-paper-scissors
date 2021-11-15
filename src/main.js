@@ -70,12 +70,10 @@ function returnToGameChoice() {
 };
 
 function playGame() {
-  human = new Player('human');
-  computer = new Player('computer');
-  game = new Game(human, computer, 'classic');
+  game = new Game();
   var fighter = event.target.dataset.type || event.target.parentNode.dataset.type;
-  human.chooseFighter(fighter);
-  computer.chooseFighter(getRandomIndex(game.classicFighters));
+  game.human.chooseFighter(fighter);
+  game.computer.chooseFighter(getRandomIndex(game.classicFighters));
   game.evaluateClassicWinConditions();
   displayResults();
   setTimeout(resetGame, 2000);
