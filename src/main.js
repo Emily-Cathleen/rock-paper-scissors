@@ -70,12 +70,10 @@ function returnToGameChoice() {
 };
 
 function playGame() {
-  human = new Player('human');
-  computer = new Player('computer');
-  game = new Game(human, computer, 'classic');
+  game = new Game();
   var fighter = event.target.dataset.type || event.target.parentNode.dataset.type;
-  human.chooseFighter(fighter);
-  computer.chooseFighter(getRandomIndex(game.classicFighters));
+  game.human.chooseFighter(fighter);
+  game.computer.chooseFighter(getRandomIndex(game.classicFighters));
   game.evaluateClassicWinConditions();
   displayResults();
   setTimeout(resetGame, 2000);
@@ -85,58 +83,51 @@ function displayResults() {
   addHidden(chooseFighterClassic);
   removeHidden(resultsView);
   selectedFighter();
-  // humanWins.innerText = human.wins;
-  // computerWins.innerText = computer.wins;
   if (game.winner === 'human') {
-      var currentWins = JSON.parse(localStorage.getItem("human"))
+      var currentWins = JSON.parse(localStorage.getItem("human"));
       currentWins += 1;
       var stringifiedHumanWins = JSON.stringify(currentWins);
       localStorage.setItem("human", stringifiedHumanWins);
-       centerChoose.innerText = "Human won this round!"
+      humanWins.innerText = stringifiedHumanWins;
+      centerChoose.innerText = "Human won this round!"
   } else if (game.winner === 'computer') {
-       centerChoose.innerText = "Computer won this round!"
+      var currentWins = JSON.parse(localStorage.getItem("computer"));
+      currentWins += 1;
+      var stringifiedComputerWins = JSON.stringify(currentWins);
+      localStorage.setItem("computer", stringifiedComputerWins);
+      computerWins.innerText = stringifiedComputerWins;
+      centerChoose.innerText = "Computer won this round!"
   } else {
        centerChoose.innerText = "It's a draw!"
-       console.log("helooooo");
   }
 };
 
 function selectedFighter() {
   humanFighter.src = `./assets/${human.fighterChoice}.png`
-  console.log("test")
   computerFighter.src = `./assets/${computer.fighterChoice}.png`
 };
 
 function resetGame() {
-  console.log('emily')
   addHidden(resultsView);
   if (game.gameType === 'classic') {
     displayClassicGame();
   } else if (game.gameType === 'difficult') {
     displayDifficultGame();
   }
-
 };
 
 //local storage
-
-function saveWinsLocalStorage(){
-
-  }
-}
-
-
-
 
 
 classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 changeGameButton.addEventListener('click', returnToGameChoice);
-rockFighter.addEventListener('click', playGame)
-paperFighter.addEventListener('click', playGame)
-scissorFighter.addEventListener('click', playGame)
-mushroomFighter.addEventListener('click', playGame)
-bigfootFighter.addEventListener('click', playGame)
+rockFighter.addEventListener('click', playGame);
+paperFighter.addEventListener('click', playGame);
+scissorFighter.addEventListener('click', playGame);
+mushroomFighter.addEventListener('click', playGame);
+bigfootFighter.addEventListener('click', playGame);
+// window.addEventListener('load', displayResults());
 
 //refactor:
 //Id for event.targrt.id to select for fighter icon
