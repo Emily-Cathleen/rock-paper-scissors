@@ -10,7 +10,4 @@ class Player {
     this.fighterChoice = fighter;
   }
 
-  
-
-
-}
+};

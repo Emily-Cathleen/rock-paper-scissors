@@ -86,14 +86,14 @@ function displayResults() {
   removeHidden(resultsView);
   selectedFighter();
   if (game.winner === 'human') {
-      var currentWins = JSON.parse(localStorage.getItem("human"))
+      var currentWins = JSON.parse(localStorage.getItem("human"));
       currentWins += 1;
       var stringifiedHumanWins = JSON.stringify(currentWins);
       localStorage.setItem("human", stringifiedHumanWins);
       humanWins.innerText = stringifiedHumanWins;
-       centerChoose.innerText = "Human won this round!"
+      centerChoose.innerText = "Human won this round!"
   } else if (game.winner === 'computer') {
-      var currentWins = JSON.parse(localStorage.getItem("computer"))
+      var currentWins = JSON.parse(localStorage.getItem("computer"));
       currentWins += 1;
       var stringifiedComputerWins = JSON.stringify(currentWins);
       localStorage.setItem("computer", stringifiedComputerWins);
@@ -106,26 +106,19 @@ function displayResults() {
 
 function selectedFighter() {
   humanFighter.src = `./assets/${human.fighterChoice}.png`
-  console.log("test")
   computerFighter.src = `./assets/${computer.fighterChoice}.png`
 };
 
 function resetGame() {
-  console.log('emily')
   addHidden(resultsView);
   if (game.gameType === 'classic') {
     displayClassicGame();
   } else if (game.gameType === 'difficult') {
     displayDifficultGame();
   }
-
 };
 
 //local storage
-
-
-
-
 
 
 classicGame.addEventListener('click', displayClassicGame);
