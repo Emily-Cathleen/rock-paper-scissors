@@ -32,6 +32,7 @@ function removeHidden(element) {
 };
 
 function displayClassicGame() {
+  game.selectGameType(undefined);
   hideMain();
   removeHidden(chooseFighterClassic);
   addHidden(mushroomFighter);

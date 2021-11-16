@@ -10,7 +10,7 @@ class Game {
   };
 
   selectGameType(gameType) {
-    this.gameType = gameType;
+    this.gameType = gameType || "classic";
     if (gameType === "difficult" && this.classicFighters.length < 5) {
       this.classicFighters.push("mushroom", "bigfoot");
     }
