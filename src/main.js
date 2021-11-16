@@ -87,23 +87,14 @@ function displayResults() {
   addHidden(chooseFighterClassic);
   removeHidden(resultsView);
   selectedFighter();
-  if (game.winner === 'human') {
-      var currentWins = JSON.parse(localStorage.getItem("human"));
-      currentWins += 1;
-      var stringifiedHumanWins = JSON.stringify(currentWins);
-      localStorage.setItem("human", stringifiedHumanWins);
-      humanWins.innerText = stringifiedHumanWins;
-      centerChoose.innerText = "Human won this round!"
-  } else if (game.winner === 'computer') {
-      var currentWins = JSON.parse(localStorage.getItem("computer"));
-      currentWins += 1;
-      var stringifiedComputerWins = JSON.stringify(currentWins);
-      localStorage.setItem("computer", stringifiedComputerWins);
-      computerWins.innerText = stringifiedComputerWins;
-      centerChoose.innerText = "Computer won this round!"
-  } else {
-       centerChoose.innerText = "It's a draw!"
-  }
+  updateScore();
+
+};
+
+function updateScore() {
+  retrieveWinsFromStorage();
+  humanWins.innerText = `${game.human.wins}`;
+  computerWins.innerText = `${game.computer.wins}`;
 };
 
 function selectedFighter() {

@@ -13,6 +13,8 @@ class Game {
     if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "mushroom")) {
       this.winner = "human";
       this.human.wins += 1;
+      this.human.saveWinsToStorage();
+      centerChoose.innerText = "Human won this round!"
     } else if (this.human.fighterChoice === "paper" && (this.computer.fighterChoice === "rock" || this.computer.fighterChoice === "bigfoot")) {
       this.winner = "human";
       this.human.wins += 1;
@@ -27,9 +29,12 @@ class Game {
       this.human.wins += 1;
     } else if (this.human.fighterChoice === this.computer.fighterChoice) {
       this.winner = "";
+      centerChoose.innerText = "It's a draw!"
     }
     this.winner = "computer"
     this.computer.wins += 1;
+    this.computer.saveWinsToStorage();
+    centerChoose.innerText = "Computer won this round!"
   };
 
 // evaluateClassicWinConditions() {
