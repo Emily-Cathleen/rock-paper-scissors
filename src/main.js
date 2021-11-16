@@ -6,7 +6,7 @@ var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
 var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
 var changeGameButton = document.querySelector('.change-game');
 // var selectFighter = document.querySelectorAll('.fighter-button');
-var rockFighter = document.querySelector('[data-type="rock"]');
+var rockFighter = document.querySelector('#rock');
 var paperFighter = document.querySelector('[data-type="paper"]');
 var scissorFighter = document.querySelector('[data-type="scissor"]');
 var mushroomFighter = document.querySelector('[data-type="mushroom"]');
@@ -71,9 +71,9 @@ function returnToGameChoice() {
 
 function playGame(event) {
   game = new Game();
-  var fighter = event.target.dataset.type || event.target.parentNode.dataset.type;
+  var fighter = event.target.id || event.target.parentNode.id;
   chooseBothFighters(fighter);
-  game.evaluateWinConditions();
+  // game.evaluateWinConditions();
   displayResults();
   setTimeout(resetGame, 2000);
 };
@@ -88,11 +88,11 @@ function displayResults() {
   removeHidden(resultsView);
   selectedFighter();
   updateScore();
-
 };
 
 function updateScore() {
-  retrieveWinsFromStorage();
+  game.human.retrieveWinsFromStorage();
+  game.computer.retrieveWinsFromStorage();
   humanWins.innerText = `${game.human.wins}`;
   computerWins.innerText = `${game.computer.wins}`;
 };
@@ -111,13 +111,12 @@ function resetGame() {
   }
 };
 
-//local storage
-
 
 classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 changeGameButton.addEventListener('click', returnToGameChoice);
-rockFighter.addEventListener('click', playGame);
+rockFighter.addEventListener('click', function(event){
+  playGame(event)});
 paperFighter.addEventListener('click', playGame);
 scissorFighter.addEventListener('click', playGame);
 mushroomFighter.addEventListener('click', playGame);

@@ -16,25 +16,12 @@ class Player {
   saveWinsToStorage() {
     var currentWins = this.wins;
     var stringifiedWins = JSON.stringify(currentWins);
-    return localStorage.setItem(`${this.name} wins`, stringifiedWins)
-
-
-    // var currentWins = JSON.parse(localStorage.getItem("human"));
-    // currentWins += 1;
-    // var stringifiedHumanWins = JSON.stringify(currentWins);
-    // localStorage.setItem("human", stringifiedHumanWins);
-    // humanWins.innerText = stringifiedHumanWins;
-
-    // var currentWins = JSON.parse(localStorage.getItem("computer"));
-    // currentWins += 1;
-    // var stringifiedComputerWins = JSON.stringify(currentWins);
-    // localStorage.setItem("computer", stringifiedComputerWins);
-    // computerWins.innerText = stringifiedComputerWins;
+    localStorage.setItem(`${this.name} wins`, stringifiedWins);
   };
 
   retrieveWinsFromStorage() {
     var retrievedWins = localStorage.getItem(`${this.name} wins`);
-    var parsedWinss = JSON.parse(retrievedWins);
+    var parsedWins = JSON.parse(retrievedWins);
     this.wins = parsedWins;
 
   };
