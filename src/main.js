@@ -29,7 +29,7 @@ var computerWins = document.querySelector('.computer-wins');
 // }
 
 //global variables
-var game;
+var game = new Game();
 
 function getRandomIndex(array) {
   var randomIndex = Math.floor(Math.random() * array.length);
@@ -70,12 +70,10 @@ function returnToGameChoice() {
 };
 
 function playGame(event) {
-  game = new Game();
   var fighter = event.target.id || event.target.parentNode.id;
   chooseBothFighters(fighter);
-centerChoose.innerText = game.message;
-
-  // game.evaluateWinConditions();
+  game.evaluateWinConditions();
+  centerChoose.innerText = game.message;
   displayResults();
   setTimeout(resetGame, 2000);
 };

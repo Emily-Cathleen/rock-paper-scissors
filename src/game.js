@@ -19,11 +19,8 @@ class Game {
   };
 
   evaluateWinConditions() {
-    if (this.human.fighterChoice === this.computer.fighterChoice) {
-      this.winner = "";
-      this.message = "It's a draw!"
-    }
-    else if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "mushroom")) {
+    // debugger
+    if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "mushroom")) {
       this.winnerUpdate();
     } else if (this.human.fighterChoice === "paper" && (this.computer.fighterChoice === "rock" || this.computer.fighterChoice === "bigfoot")) {
       this.winnerUpdate();
@@ -33,12 +30,16 @@ class Game {
       this.winnerUpdate();
     } else if (this.human.fighterChoice === "bigfoot" && (this.computer.fighterChoice === "rock" || this.computer.fighterChoice === "mushroom")) {
       this.winnerUpdate();
-    }
-    this.winner = "computer";
-    this.human.retrieveWinsFromStorage();
-    this.computer.wins += 1;
-    this.computer.saveWinsToStorage();
-    this.message = "Computer won this round!"
+    } else if (this.human.fighterChoice === this.computer.fighterChoice) {
+      this.winner = "";
+      this.message = "It's a draw!"
+    } else {
+      this.winner = "computer";
+      this.computer.retrieveWinsFromStorage();
+      this.computer.wins += 1;
+      this.computer.saveWinsToStorage();
+      this.message = "Computer won this round!"
+    };
   };
 
 // evaluateClassicWinConditions() {
