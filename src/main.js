@@ -73,6 +73,8 @@ function playGame(event) {
   game = new Game();
   var fighter = event.target.id || event.target.parentNode.id;
   chooseBothFighters(fighter);
+centerChoose.innerText = game.message;
+
   // game.evaluateWinConditions();
   displayResults();
   setTimeout(resetGame, 2000);
@@ -91,10 +93,8 @@ function displayResults() {
 };
 
 function updateScore() {
-  game.human.retrieveWinsFromStorage();
-  game.computer.retrieveWinsFromStorage();
-  humanWins.innerText = `${game.human.wins}`;
-  computerWins.innerText = `${game.computer.wins}`;
+  humanWins.innerText = game.human.retrieveWinsFromStorage() || 0;
+  computerWins.innerText = game.computer.retrieveWinsFromStorage()  || 0;
 };
 
 function selectedFighter() {

@@ -7,19 +7,21 @@ class Game {
     this.draw = true;
     this.classicFighters = ['rock', 'paper', 'scissor'];
     this.difficultFighters = ['rock', 'paper', 'scissor', 'mushroom', 'bigfoot'];
+    this.message = '';
   };
 
   winnerUpdate() {
     this.winner = "human";
+    this.human.retrieveWinsFromStorage();
     this.human.wins += 1;
     this.human.saveWinsToStorage();
-    centerChoose.innerText = "Human won this round!";
+    this.message = "Human won this round!";
   };
 
   evaluateWinConditions() {
     if (this.human.fighterChoice === this.computer.fighterChoice) {
       this.winner = "";
-      centerChoose.innerText = "It's a draw!"
+      this.message = "It's a draw!"
     }
     else if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "mushroom")) {
       this.winnerUpdate();
@@ -32,10 +34,11 @@ class Game {
     } else if (this.human.fighterChoice === "bigfoot" && (this.computer.fighterChoice === "rock" || this.computer.fighterChoice === "mushroom")) {
       this.winnerUpdate();
     }
-    this.winner = "computer"
+    this.winner = "computer";
+    this.human.retrieveWinsFromStorage();
     this.computer.wins += 1;
     this.computer.saveWinsToStorage();
-    centerChoose.innerText = "Computer won this round!"
+    this.message = "Computer won this round!"
   };
 
 // evaluateClassicWinConditions() {
