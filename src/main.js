@@ -129,7 +129,7 @@ paperFighter.addEventListener('click', playGame);
 scissorFighter.addEventListener('click', playGame);
 mushroomFighter.addEventListener('click', playGame);
 bigfootFighter.addEventListener('click', playGame);
-// window.addEventListener('load', displayResults());
+window.addEventListener('load', updateScore);
 
 //refactor:
 //Id for event.targrt.id to select for fighter icon
