@@ -2,13 +2,20 @@ class Game {
   constructor(gameType) {
     this.human = new Player('human', './assets/woman.png');
     this.computer = new Player('computer', './assets/desktop.png');
-    this.gameType = gameType;
+    this.gameType = gameType || "classic";
     this.winner = '';
     this.draw = true;
     this.classicFighters = ['rock', 'paper', 'scissor'];
     this.difficultFighters = ['rock', 'paper', 'scissor', 'mushroom', 'bigfoot'];
     this.message = '';
   };
+
+  selectGameType(gameType) {
+    this.gameType = gameType;
+    if (gameType === "difficult") {
+      this.classicFighters.push("mushroom", "bigfoot");
+    }
+  }
 
   winnerUpdate() {
     this.winner = "human";
@@ -19,7 +26,6 @@ class Game {
   };
 
   evaluateWinConditions() {
-    // debugger
     if (this.human.fighterChoice === "rock" && (this.computer.fighterChoice === "scissor" || this.computer.fighterChoice === "mushroom")) {
       this.winnerUpdate();
     } else if (this.human.fighterChoice === "paper" && (this.computer.fighterChoice === "rock" || this.computer.fighterChoice === "bigfoot")) {

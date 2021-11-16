@@ -50,7 +50,9 @@ function displayClassicGame() {
 };
 
 function displayDifficultGame() {
+  game.selectGameType("difficult");
   hideMain();
+  addHidden(chooseFighterClassic);
   removeHidden(chooseFighterDifficult);
 };
 
@@ -62,18 +64,17 @@ function hideMain() {
 
 function returnToGameChoice() {
   centerChoose.innerText = "Choose your game!"
-  removeHidden(gameChoiceView);
   addHidden(changeGameButton);
   addHidden(chooseFighterClassic);
   addHidden(chooseFighterDifficult);
   addHidden(resultsView);
+  removeHidden(gameChoiceView);
 };
 
 function playGame(event) {
   var fighter = event.target.id || event.target.parentNode.id;
   chooseBothFighters(fighter);
   game.evaluateWinConditions();
-  centerChoose.innerText = game.message;
   displayResults();
   setTimeout(resetGame, 2000);
 };
@@ -84,7 +85,9 @@ function chooseBothFighters(fighter) {
 };
 
 function displayResults() {
+  centerChoose.innerText = game.message;
   addHidden(chooseFighterClassic);
+  addHidden(chooseFighterDifficult);
   removeHidden(resultsView);
   selectedFighter();
   updateScore();
@@ -101,12 +104,19 @@ function selectedFighter() {
 };
 
 function resetGame() {
+  centerChoose.innerText = "Choose your fighter!"
   addHidden(resultsView);
-  if (game.gameType === 'classic') {
-    displayClassicGame();
-  } else if (game.gameType === 'difficult') {
+  if (game.gameType === "difficult") {
+    addHidden(chooseFighterClassic);
     displayDifficultGame();
-  }
+  } else {
+    displayClassicGame();
+  // if (game.gameType === 'classic') {
+  //   displayClassicGame();
+  // } else if (game.gameType === 'difficult') {
+  //   displayDifficultGame();
+  // }
+};
 };
 
 
