@@ -25,7 +25,4 @@ class Player {
     this.wins = parsedWins;
     return this.wins;
   };
-
-
-
 };
