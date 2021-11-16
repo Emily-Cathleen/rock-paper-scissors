@@ -6,7 +6,7 @@ var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
 var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
 var changeGameButton = document.querySelector('.change-game');
 // var selectFighter = document.querySelectorAll('.fighter-button');
-var rockFighter = document.querySelector('[data-type="rock"]');
+var rockFighter = document.querySelector('#rock');
 var paperFighter = document.querySelector('[data-type="paper"]');
 var scissorFighter = document.querySelector('[data-type="scissor"]');
 var mushroomFighter = document.querySelector('[data-type="mushroom"]');
@@ -29,7 +29,7 @@ var computerWins = document.querySelector('.computer-wins');
 // }
 
 //global variables
-var game;
+var game = new Game();
 
 function getRandomIndex(array) {
   var randomIndex = Math.floor(Math.random() * array.length);
@@ -50,7 +50,9 @@ function displayClassicGame() {
 };
 
 function displayDifficultGame() {
+  game.selectGameType("difficult");
   hideMain();
+  addHidden(chooseFighterClassic);
   removeHidden(chooseFighterDifficult);
 };
 
@@ -62,72 +64,72 @@ function hideMain() {
 
 function returnToGameChoice() {
   centerChoose.innerText = "Choose your game!"
-  removeHidden(gameChoiceView);
   addHidden(changeGameButton);
   addHidden(chooseFighterClassic);
   addHidden(chooseFighterDifficult);
   addHidden(resultsView);
+  removeHidden(gameChoiceView);
 };
 
-function playGame() {
-  game = new Game();
-  var fighter = event.target.dataset.type || event.target.parentNode.dataset.type;
-  game.human.chooseFighter(fighter);
-  game.computer.chooseFighter(getRandomIndex(game.classicFighters));
-  game.evaluateClassicWinConditions();
+function playGame(event) {
+  var fighter = event.target.id || event.target.parentNode.id;
+  chooseBothFighters(fighter);
+  game.evaluateWinConditions();
   displayResults();
   setTimeout(resetGame, 2000);
 };
 
+function chooseBothFighters(fighter) {
+  game.human.chooseFighter(fighter);
+  game.computer.chooseFighter();
+};
+
 function displayResults() {
+  centerChoose.innerText = game.message;
   addHidden(chooseFighterClassic);
+  addHidden(chooseFighterDifficult);
   removeHidden(resultsView);
   selectedFighter();
-  if (game.winner === 'human') {
-      var currentWins = JSON.parse(localStorage.getItem("human"));
-      currentWins += 1;
-      var stringifiedHumanWins = JSON.stringify(currentWins);
-      localStorage.setItem("human", stringifiedHumanWins);
-      humanWins.innerText = stringifiedHumanWins;
-      centerChoose.innerText = "Human won this round!"
-  } else if (game.winner === 'computer') {
-      var currentWins = JSON.parse(localStorage.getItem("computer"));
-      currentWins += 1;
-      var stringifiedComputerWins = JSON.stringify(currentWins);
-      localStorage.setItem("computer", stringifiedComputerWins);
-      computerWins.innerText = stringifiedComputerWins;
-      centerChoose.innerText = "Computer won this round!"
-  } else {
-       centerChoose.innerText = "It's a draw!"
-  }
+  updateScore();
+};
+
+function updateScore() {
+  humanWins.innerText = game.human.retrieveWinsFromStorage() || 0;
+  computerWins.innerText = game.computer.retrieveWinsFromStorage()  || 0;
 };
 
 function selectedFighter() {
-  humanFighter.src = `./assets/${human.fighterChoice}.png`
-  computerFighter.src = `./assets/${computer.fighterChoice}.png`
+  humanFighter.src = `./assets/${game.human.fighterChoice}.png`
+  computerFighter.src = `./assets/${game.computer.fighterChoice}.png`
 };
 
 function resetGame() {
+  centerChoose.innerText = "Choose your fighter!"
   addHidden(resultsView);
-  if (game.gameType === 'classic') {
-    displayClassicGame();
-  } else if (game.gameType === 'difficult') {
+  if (game.gameType === "difficult") {
+    addHidden(chooseFighterClassic);
     displayDifficultGame();
-  }
+  } else {
+    displayClassicGame();
+  // if (game.gameType === 'classic') {
+  //   displayClassicGame();
+  // } else if (game.gameType === 'difficult') {
+  //   displayDifficultGame();
+  // }
 };
-
-//local storage
+};
 
 
 classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 changeGameButton.addEventListener('click', returnToGameChoice);
-rockFighter.addEventListener('click', playGame);
+rockFighter.addEventListener('click', function(event){
+  playGame(event)});
 paperFighter.addEventListener('click', playGame);
 scissorFighter.addEventListener('click', playGame);
 mushroomFighter.addEventListener('click', playGame);
 bigfootFighter.addEventListener('click', playGame);
-// window.addEventListener('load', displayResults());
+window.addEventListener('load', updateScore);
 
 //refactor:
 //Id for event.targrt.id to select for fighter icon

@@ -7,9 +7,25 @@ class Player {
   }
 
   chooseFighter(fighter) {
-    this.fighterChoice = fighter;
+    if (!fighter) {
+      return this.fighterChoice = getRandomIndex(game.classicFighters);
+    }
+    return this.fighterChoice = fighter;
+  };
 
-  }
+  saveWinsToStorage() {
+    var currentWins = this.wins;
+    var stringifiedWins = JSON.stringify(currentWins);
+    localStorage.setItem(`${this.name} wins`, stringifiedWins);
+  };
+
+  retrieveWinsFromStorage() {
+    var retrievedWins = localStorage.getItem(`${this.name} wins`);
+    var parsedWins = JSON.parse(retrievedWins);
+    this.wins = parsedWins;
+    return this.wins;
+  };
+
 
 
 };
