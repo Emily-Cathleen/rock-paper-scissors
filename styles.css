@@ -125,13 +125,6 @@ html {
   cursor: pointer;
 }
 
-.choose-fighter-classic {
-
-}
-
-.choose-fighter-difficult {
-
-}
 
 .fighter-icon {
   height: 80px;
@@ -157,7 +150,7 @@ html {
 }
 
 .results-view {
-  
+
 }
 
 .hidden {

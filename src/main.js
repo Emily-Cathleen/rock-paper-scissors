@@ -5,31 +5,18 @@ var gameChoiceView = document.querySelector('.game-choice-view');
 var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
 var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
 var changeGameButton = document.querySelector('.change-game');
-// var selectFighter = document.querySelectorAll('.fighter-button');
 var rockFighter = document.querySelector('#rock');
-var paperFighter = document.querySelector('[data-type="paper"]');
-var scissorFighter = document.querySelector('[data-type="scissor"]');
-var mushroomFighter = document.querySelector('[data-type="mushroom"]');
-var bigfootFighter = document.querySelector('[data-type="bigfoot"]');
+var paperFighter = document.querySelector('#paper');
+var scissorFighter = document.querySelector('#scissor');
+var mushroomFighter = document.querySelector('#mushroom');
+var bigfootFighter = document.querySelector('#bigfoot');
 var resultsView = document.querySelector('.results-view');
 var humanFighter = document.querySelector('#humanFighter');
 var computerFighter = document.querySelector('#computerFighter');
 var humanWins = document.querySelector('.human-wins');
 var computerWins = document.querySelector('.computer-wins');
-
-
-//query select for each button - assign that fighter to a human player.
-//Assign a random fighter to the comouter player.
-//store the choices in the game class. player 1 chosen token. player 2 chosen token.
-//method in the game class to evaluate win conditions
-
-
-// for (var i = 0; i < selectFighter.length; i++) {
-//   selectFighter[i].addEventListener("click", startGame);
-// }
-
-//global variables
 var game = new Game();
+
 
 function getRandomIndex(array) {
   var randomIndex = Math.floor(Math.random() * array.length);
@@ -47,13 +34,16 @@ function removeHidden(element) {
 function displayClassicGame() {
   hideMain();
   removeHidden(chooseFighterClassic);
+  addHidden(mushroomFighter);
+  addHidden(bigfootFighter);
 };
 
 function displayDifficultGame() {
   game.selectGameType("difficult");
   hideMain();
-  addHidden(chooseFighterClassic);
-  removeHidden(chooseFighterDifficult);
+  removeHidden(chooseFighterClassic);
+  removeHidden(mushroomFighter);
+  removeHidden(bigfootFighter);
 };
 
 function hideMain() {
@@ -66,9 +56,9 @@ function returnToGameChoice() {
   centerChoose.innerText = "Choose your game!"
   addHidden(changeGameButton);
   addHidden(chooseFighterClassic);
-  addHidden(chooseFighterDifficult);
   addHidden(resultsView);
   removeHidden(gameChoiceView);
+  game.classicFighters = ['rock', 'paper', 'scissor'];
 };
 
 function playGame(event) {
@@ -87,7 +77,6 @@ function chooseBothFighters(fighter) {
 function displayResults() {
   centerChoose.innerText = game.message;
   addHidden(chooseFighterClassic);
-  addHidden(chooseFighterDifficult);
   removeHidden(resultsView);
   selectedFighter();
   updateScore();
@@ -104,33 +93,28 @@ function selectedFighter() {
 };
 
 function resetGame() {
-  centerChoose.innerText = "Choose your fighter!"
+  centerChoose.innerText = "Choose your fighter!";
   addHidden(resultsView);
+  removeHidden(chooseFighterClassic);
   if (game.gameType === "difficult") {
-    addHidden(chooseFighterClassic);
     displayDifficultGame();
-  } else {
+  } else if (game.gameType === "classic") {
     displayClassicGame();
-  // if (game.gameType === 'classic') {
-  //   displayClassicGame();
-  // } else if (game.gameType === 'difficult') {
-  //   displayDifficultGame();
-  // }
+    game.classicFighters = ['rock', 'paper', 'scissor'];
+  };
 };
-};
-
 
 classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 changeGameButton.addEventListener('click', returnToGameChoice);
 rockFighter.addEventListener('click', function(event){
   playGame(event)});
-paperFighter.addEventListener('click', playGame);
-scissorFighter.addEventListener('click', playGame);
-mushroomFighter.addEventListener('click', playGame);
-bigfootFighter.addEventListener('click', playGame);
+paperFighter.addEventListener('click', function(event){
+  playGame(event)});
+scissorFighter.addEventListener('click', function(event){
+  playGame(event)});
+mushroomFighter.addEventListener('click', function(event){
+  playGame(event)});
+bigfootFighter.addEventListener('click', function(event){
+  playGame(event)});
 window.addEventListener('load', updateScore);
-
-//refactor:
-//Id for event.targrt.id to select for fighter icon
-//-use id's to query select for HTML elements. classes should be used for class ClassName

@@ -6,13 +6,12 @@ class Game {
     this.winner = '';
     this.draw = true;
     this.classicFighters = ['rock', 'paper', 'scissor'];
-    this.difficultFighters = ['rock', 'paper', 'scissor', 'mushroom', 'bigfoot'];
     this.message = '';
   };
 
   selectGameType(gameType) {
     this.gameType = gameType;
-    if (gameType === "difficult") {
+    if (gameType === "difficult" && this.classicFighters.length < 5) {
       this.classicFighters.push("mushroom", "bigfoot");
     }
   }
