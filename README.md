@@ -29,9 +29,17 @@ OR find live link [HERE](https://emily-cathleen.github.io/rock-paper-scissors/)
 * CSS
 
 ## Future State
-* I would like to create a button that links to a section with additional information about the elements in my game! 
+* Application fully implements HTML that is accessible for individuals with visual disabilities. 
+* I would like to create a button that links to a section with additional information about the elements in my game.
 * [mycology](https://paulstamets.com/)
 * [bigfoot](https://freerangeamerican.us/lesser-known-bigfoot-legends/)
+
+## Challenges
+* Refactoring my code so that the separation of data model logic and DOM logic is clear and that all of my DOM manipulation is handled exclusively in main.js.
+
+## Wins
+* CSS - I am proud of my slyling for this site as compared to past projects. 
+* I learned new tools for debugging code and feel that my understanding of class to class interaction has finally come full circle.
 
 ## Ackowledgements
 [Kristen Bair](https://github.com/kristenmb)
