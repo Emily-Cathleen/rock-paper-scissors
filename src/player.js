@@ -2,7 +2,7 @@ class Player {
   constructor(name, token) {
     this.name = name;
     this.wins = 0;
-    this.fighterChoice = '';
+    this.fighterChoice = "";
     this.token = token;
   }
 
@@ -25,7 +25,4 @@ class Player {
     this.wins = parsedWins;
     return this.wins;
   };
-
-
-
 };

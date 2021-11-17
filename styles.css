@@ -8,13 +8,11 @@ body {
   display: flex;
   justify-content: center;
   background: url(https://images.pexels.com/photos/5345029/pexels-photo-5345029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-
 }
 
 html {
   height: 100%;
   width: 100%;
-
 }
 
  .main-page {
@@ -47,7 +45,6 @@ html {
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 10px;
-
 }
 
 .sidebar-element {
@@ -99,7 +96,7 @@ html {
 
 .choice-style {
   font-size: 23px;
-
+  overflow-wrap: break-word;
 }
 
 .classic-game,
@@ -125,13 +122,6 @@ html {
   cursor: pointer;
 }
 
-.choose-fighter-classic {
-
-}
-
-.choose-fighter-difficult {
-
-}
 
 .fighter-icon {
   height: 80px;
@@ -153,11 +143,9 @@ html {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: rgb(148 165 110 / 91%);
-
 }
 
 .results-view {
-  
 }
 
 .hidden {
