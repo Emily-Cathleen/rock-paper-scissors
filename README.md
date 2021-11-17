@@ -7,7 +7,13 @@
 
 You will begin by choosing to play either a classic or difficult game. Next, you will choose your fighter. Once your fighter is chosen, the game will begin automatically and the results of the game will be displayed. 
 
+## Play a Cassic Game
+
 ![](https://media.giphy.com/media/r1iyOUPGkIZUjIdq3L/giphy.gif)
+
+## Play a Difficult Game
+
+![](https://media.giphy.com/media/7CmX3IktpvSitK95Vi/giphy.gif)
 
 ## Set Up
 1. Fork [this](https://github.com/Emily-Cathleen/rock-paper-scissors) repository.
