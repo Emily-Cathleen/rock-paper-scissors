@@ -1,11 +1,11 @@
 # 🌲 Forrest Rock, Paper, Scissors 🍄
 
 ## Description
- You will play your computer opponent in a game of rock, paper, scissors. There are two levels: classic and difficult. The classic game, using rock, paper, and scisssors. Or, if you are feeling spicy, you may choose the difficult level. The difficult level includes rock, paper, scisors, mushroom, and bigfoot. 
+You will play your computer opponent in a game of rock, paper, scissors. There are two levels: classic and difficult. The classic game, using rock, paper, and scisssors. Or, if you are feeling spicy, you may choose the difficult level. The difficult level includes rock, paper, scisors, mushroom, and bigfoot. 
 
 ## Game Play
 
-You will begin by choosing to play either a classic or difficult game. Next, you will choose your fighter. Once your fighter is chosen, the game will begin automatically and the results of the game will be displayed. 
+You will begin by choosing to play either a classic or difficult game. Next, you will choose your fighter. Once your fighter is chosen, the game will begin automatically and the results of the game will be displayed. If a player wins, an announcment will pop up to annouce their win. The winners' win count will increase, and a new game will automatically begin. Should the game result in a draw, neither score will increase.
 
 ## Play a Cassic Game
 
@@ -28,8 +28,14 @@ OR find live link [HERE](https://emily-cathleen.github.io/rock-paper-scissors/)
 * HTML
 * CSS
 
-## Challenges
+## Future State
+* I would like to create a button that links to a section with additional information about the elements in my game! 
+* [mycology](https://paulstamets.com/)
+* [bigfoot](https://freerangeamerican.us/lesser-known-bigfoot-legends/)
 
 ## Ackowledgements
-[Kristen Bair
+[Kristen Bair](https://github.com/kristenmb)
+
+## Project Members
+This project was completed at the Turing School of Software & Design. Functionality and design by [Emily Corcoran](https://github.com/Emily-Cathleen)
 
