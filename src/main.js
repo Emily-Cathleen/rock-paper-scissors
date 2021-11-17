@@ -1,20 +1,20 @@
 var classicGame = document.querySelector(".classic-game");
-var difficultGame = document.querySelector('.difficult-game');
-var centerChoose = document.querySelector('.center-choose');
-var gameChoiceView = document.querySelector('.game-choice-view');
-var chooseFighterClassic = document.querySelector('.choose-fighter-classic');
-var chooseFighterDifficult = document.querySelector('.choose-fighter-difficult');
-var changeGameButton = document.querySelector('.change-game');
-var rockFighter = document.querySelector('#rock');
-var paperFighter = document.querySelector('#paper');
-var scissorFighter = document.querySelector('#scissor');
-var mushroomFighter = document.querySelector('#mushroom');
-var bigfootFighter = document.querySelector('#bigfoot');
-var resultsView = document.querySelector('.results-view');
-var humanFighter = document.querySelector('#humanFighter');
-var computerFighter = document.querySelector('#computerFighter');
-var humanWins = document.querySelector('.human-wins');
-var computerWins = document.querySelector('.computer-wins');
+var difficultGame = document.querySelector(".difficult-game");
+var centerChoose = document.querySelector(".center-choose");
+var gameChoiceView = document.querySelector(".game-choice-view");
+var chooseFighterClassic = document.querySelector(".choose-fighter-classic");
+var chooseFighterDifficult = document.querySelector(".choose-fighter-difficult");
+var changeGameButton = document.querySelector(".change-game");
+var rockFighter = document.querySelector("#rock");
+var paperFighter = document.querySelector("#paper");
+var scissorFighter = document.querySelector("#scissor");
+var mushroomFighter = document.querySelector("#mushroom");
+var bigfootFighter = document.querySelector("#bigfoot");
+var resultsView = document.querySelector(".results-view");
+var humanFighter = document.querySelector("#humanFighter");
+var computerFighter = document.querySelector("#computerFighter");
+var humanWins = document.querySelector(".human-wins");
+var computerWins = document.querySelector(".computer-wins");
 var game = new Game();
 
 

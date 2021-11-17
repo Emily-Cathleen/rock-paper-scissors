@@ -96,6 +96,7 @@ html {
 
 .choice-style {
   font-size: 23px;
+  overflow-wrap: break-word;
 }
 
 .classic-game,
