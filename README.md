@@ -23,10 +23,10 @@ You will begin by choosing to play either a classic or difficult game. Next, you
 
 OR find live link [HERE](https://emily-cathleen.github.io/rock-paper-scissors/)
 
-## Program Languages
-* JavaScript
-* HTML
-* CSS
+## Tech Stack
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ## Future State
 * Application fully implements HTML that is accessible for individuals with visual disabilities. 
